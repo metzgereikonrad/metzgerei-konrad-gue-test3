@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Metzgerei Konrad – Impressum</title>
-  <meta name="description" content="Impressum der Metzgerei Konrad Inh. Oliver Junghardt, Rimparer Str. 4, 97261 Güntersleben." />
+  <title>Metzgerei Konrad – AGB</title>
+  <meta name="description" content="AGB – Liefer- und Zahlungsbedingungen der Metzgerei Konrad." />
 
-  <!-- Schriftart wie home.html / Kontakt.html -->
+  <!-- Schriftart wie home.html / Impressum.html -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -20,9 +20,11 @@
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
     body{background:var(--bg);color:#222;overflow-x:hidden}
 
-    /* Header / Navigation wie home.html & Kontakt.html */
+    /* Header / Navigation wie home.html & Impressum.html */
     header{
       position:fixed;
+      top:0;
+      left:0;
       width:100%;
       background:rgba(255,255,255,0.9);
       backdrop-filter:blur(10px);
@@ -33,6 +35,7 @@
     nav{display:flex;justify-content:space-between;align-items:center;gap:1rem}
     nav a{margin-left:1.5rem;text-decoration:none;color:#222;font-weight:500}
     nav a:hover{color:var(--primary)}
+
     .brand{
       display:flex;
       align-items:center;
@@ -45,13 +48,13 @@
     .brand strong{display:block}
     .brand span{font-size:0.8rem;color:#666}
 
-    /* Hero klein wie Kontakt.html */
+    /* Hero klein wie Impressum.html */
     .hero-small{
       min-height:45vh;
       padding-top:90px; /* Platz für fixed header */
       background:
         linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-        url('assets/images/Impressum.jpg') center/cover no-repeat;
+        url('assets/images/agb.jpg') center/cover no-repeat;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -69,7 +72,7 @@
     .hero-content h1{font-size:3rem;margin-bottom:0.75rem}
     .hero-content p{opacity:0.95;line-height:1.6}
 
-    /* Content Bereich / Card-Stil wie Kontakt.html */
+    /* Content Bereich / Card-Stil wie Impressum.html */
     .section{padding:5rem 1rem;text-align:center}
     .section h2{font-size:2rem;margin-bottom:1rem}
     .lead{max-width:980px;margin:0 auto;color:#444;line-height:1.7}
@@ -93,12 +96,10 @@
       border:1px solid rgba(0,0,0,0.05);
     }
     .card:hover{transform:translateY(-10px) scale(1.02)}
-    .visible{transform:translateY(0);opacity:1}
+    .card.visible{transform:translateY(0);opacity:1}
     .card-content{padding:1.8rem}
     .card-content h3{margin-bottom:0.8rem}
-    .card-content p{color:#444;line-height:1.8}
-    .card-content a{color:var(--primary);text-decoration:none}
-    .card-content a:hover{text-decoration:underline}
+    .card-content p{color:#444;line-height:1.8;margin-bottom:0.9rem}
 
     .block-title{
       font-weight:700;
@@ -108,7 +109,19 @@
     }
     .muted{color:#555;font-size:0.98rem}
 
-    /* Footer wie home.html / Kontakt.html */
+    .btn{
+      display:inline-block;
+      margin-top:1.2rem;
+      padding:0.8rem 1.5rem;
+      background:var(--accent);
+      color:white;
+      text-decoration:none;
+      border-radius:30px;
+      transition:0.3s;
+    }
+    .btn:hover{transform:scale(1.05)}
+
+    /* Footer wie home.html / Impressum.html */
     footer{
       background:var(--dark);
       color:#fff;
@@ -118,9 +131,10 @@
     footer a{color:#fff;text-decoration:none}
     footer a:hover{text-decoration:underline}
 
-    /* Cookie Banner wie home.html / Kontakt.html */
+    /* Cookie Banner wie home.html / Impressum.html */
     .cookie{
       position:fixed;
+      left:0;
       bottom:0;
       width:100%;
       background:#222;
@@ -158,10 +172,14 @@
       .brand{min-width:auto}
       .card-content{padding:1.4rem}
     }
+
+    /* Falls JS aus ist: Inhalte trotzdem sichtbar */
+    noscript .card { opacity:1 !important; transform:none !important; }
   </style>
 </head>
 
 <body>
+
   <!-- Header -->
   <header>
     <div class="container">
@@ -173,6 +191,7 @@
             <span>Inh. Oliver Junghardt</span>
           </div>
         </a>
+
         <div>
           <a href="index.html">Start</a>
           <a href="Wochenangebote.html">Angebote</a>
@@ -187,118 +206,138 @@
   <!-- Hero -->
   <section class="hero-small">
     <div class="hero-content">
-      <h1>Impressum</h1>
-      <p>Rechtliche Angaben & Kontaktinformationen der Metzgerei Konrad.</p>
+      <h1>AGB</h1>
+      <p>Liefer- und Zahlungsbedingungen für unseren Party-/Catering Service.</p>
     </div>
   </section>
 
   <!-- Inhalt -->
-  <section class="section" id="impressum">
-    <h2>Angaben gemäß § 5 TMG</h2>
+  <section class="section" id="agb">
+    <h2>Liefer- und Zahlungsbedingungen</h2>
     <p class="lead">
-      Hier finden Sie die gesetzlichen Pflichtangaben sowie wichtige Hinweise zu Inhalten und Links.
+      Nachfolgend finden Sie unsere Bedingungen für Lieferung, Leihgegenstände und Zahlung beim Party-/Catering Service.
     </p>
 
     <div class="cards">
+
       <div class="card">
         <div class="card-content">
-          <h3>Metzgerei Konrad</h3>
-
+          <h3>Lieferung &amp; Termine</h3>
           <p>
-            <strong>Metzgerei Konrad Inh. Oliver Junghardt</strong><br>
-            Rimparer Str. 4<br>
-            97261 Güntersleben
+            Bei Inanspruchnahme des Party-/Catering Services wird die Ware auf Wunsch des Kunden ins Haus geliefert.
+            Die Transportkosten werden nach Aufwand sowie nach Absprache berechnet.
           </p>
-
-          <p class="block-title">Gerichtsstand</p>
-          <p>Würzburg</p>
-
-          <p class="block-title">Geschäftsführer</p>
-          <p>Oliver Junghardt</p>
-
-          <p class="block-title">Kontakt</p>
           <p>
-            Tel.: <a href="tel:+4993652069251">09365 / 2069251</a><br>
-            Email: <a href="mailto:info@metzgerei-konrad-gue.de">info@metzgerei-konrad-gue.de</a>
+            Bei Lieferung zu einem Wunschtermin sollte eine Toleranz von ca. einer Stunde eingeplant werden.
+          </p>
+          <p class="muted"><strong>Hinweis:</strong> Für eventuell geringfügige Änderungen einzelner Speisen bitten wir um Verständnis.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Preise, MwSt. &amp; Leihgegenstände</h3>
+          <p>
+            Die Angebote unserer publizierten Preisliste sind freibleibend. Individuelle Preisabsprachen sind nach
+            telefonischer Rücksprache möglich.
+          </p>
+          <p>
+            Bei Aufträgen mit Personal vor Ort sowie bei der Nutzung von Leihgegenständen beträgt die MwSt. 19 % auf die gesamte Rechnungssumme.
+          </p>
+          <p class="block-title">Leihgegenstände</p>
+          <p>
+            Leihgegenstände und Verpackungsmaterial bleiben Eigentum der Metzgerei Konrad Inh. Oliver Junghardt.
+            Das von uns zur Verfügung gestellte Geschirr muss vollzählig, sauber und unbeschädigt zurückgegeben werden.
+            Beschädigte und fehlende Teile müssen vollständig ersetzt werden.
           </p>
         </div>
       </div>
 
       <div class="card">
         <div class="card-content">
-          <h3>Weitere Angaben</h3>
-
-          <p class="block-title">Zuständige Kammer</p>
+          <h3>Zahlung &amp; Gerichtsstand</h3>
           <p>
-            Handwerkskammer für Unterfranken<br>
-            Rennweger Ring 3<br>
-            97070 Würzburg<br>
-            Betriebsnummer 2030396
+            Der Rechnungsbetrag ist bei Anlieferung bzw. Abholung rein netto ohne Abzug zur Zahlung fällig.
           </p>
+          <p>
+            Die Zahlung kann innerhalb des Geschäfts in Bar sowie mit EC-Karte erfolgen.
+            Bei Inanspruchnahme des Party-/Catering Services wird nur eine Zahlung in Bar gegen Quittung akzeptiert.
+          </p>
+          <p>
+            Mit der Auftragserteilung erkennt der Besteller die oben genannten Liefer- und Zahlungsbedingungen verbindlich an.
+            Der Gerichtsstand ist Würzburg.
+          </p>
+          <p class="muted">Stand: November 2022</p>
 
-          <p class="block-title">Berufsrechtliche Regelungen</p>
-          <p>Gesetz zur Ordnung des Handwerks</p>
-
-          <p class="block-title">Umsatzsteuer-Identifikationsnummer</p>
-          <p>102/233/71332</p>
-
-          <p class="block-title">Verantwortlich für die Inhalte</p>
-          <p>Oliver Junghardt</p>
+          <p class="block-title">Inhaltlich verantwortlich</p>
+          <p>Oliver Junghardt (erreichbar gemäß Seite „Kontakt“)</p>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-content">
-          <h3>Haftungshinweis</h3>
-          <p>
-            Trotz inständiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
-            Die gesamte Webseite ist urheberrechtlich geschützt, soweit sich aus dem Urheberrechtsgesetz nichts anderes ergibt.
-            Jede Verwertung ist ohne die schriftliche Zustimmung unzulässig. Dies gilt insbesondere für Vervielfältigungen,
-            Übersetzungen, Mikroverfilmungen und die Einspeicherung und Verarbeitung der Daten in elektronische Systeme.
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 
-<footer>
-  <p>© 2026 Metzgerei Konrad</p>
-  <p>
-  <br>
-    <a href="impressum.html" style="color:white">Impressum</a> |
-    <a href="datenschutz.html" style="color:white">Datenschutz</a> |
-    <a href="agb.html" style="color:white">AGB</a>
-  </p>
-</footer>
+  <footer>
+    <p>© 2026 Metzgerei Konrad</p>
+    <p>
+      <br>
+      <a href="impressum.html" style="color:white">Impressum</a> |
+      <a href="datenschutz.html" style="color:white">Datenschutz</a> |
+      <a href="agb.html" style="color:white">AGB</a>
+    </p>
+  </footer>
 
   <!-- Cookie Banner -->
   <div class="cookie" id="cookieBanner">
     <span>Diese Website verwendet nur technisch notwendige Cookies.</span>
-    <button type="button" onclick="acceptCookies()">OK</button>
+    <button type="button" id="cookieOk">OK</button>
   </div>
 
+  <noscript>
+    <style>
+      .card{ opacity:1 !important; transform:none !important; }
+    </style>
+  </noscript>
+
   <script>
-    // Cookie Banner (wie home.html / Kontakt.html)
+    // Cookie Banner
     function acceptCookies(){
       localStorage.setItem('cookiesAccepted','true');
-      document.getElementById('cookieBanner').style.display='none';
-    }
-    if(localStorage.getItem('cookiesAccepted')){
-      document.getElementById('cookieBanner').style.display='none';
+      const banner = document.getElementById('cookieBanner');
+      if (banner) banner.style.display = 'none';
     }
 
-    // Scroll Reveal: Cards sichtbar machen
-    const cards = document.querySelectorAll('.card');
-    const reveal = () => {
-      const trigger = window.innerHeight * 0.88;
-      cards.forEach(card => {
-        const top = card.getBoundingClientRect().top;
-        if(top < trigger) card.classList.add('visible');
-      });
-    };
-    window.addEventListener('scroll', reveal);
-    window.addEventListener('load', reveal);
-    reveal();
+    // Event sauber binden (statt onclick im HTML)
+    document.getElementById('cookieOk')?.addEventListener('click', acceptCookies);
+
+    // Banner beim Laden ggf. ausblenden
+    if (localStorage.getItem('cookiesAccepted')) {
+      const banner = document.getElementById('cookieBanner');
+      if (banner) banner.style.display = 'none';
+    }
+
+    // Cards Reveal (robust)
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.card');
+
+      // Wenn kein Observer verfügbar: alle sichtbar
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(c => c.classList.add('visible'));
+        return;
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      cards.forEach(card => io.observe(card));
+    });
   </script>
+
 </body>
 </html>
