@@ -175,7 +175,62 @@
 
     /* Falls JS aus ist: Inhalte trotzdem sichtbar */
     noscript .card { opacity:1 !important; transform:none !important; }
-  </style>
+  
+
+/* --- Hamburger Navigation (Mobile) --- */
+.nav-right { display:flex; align-items:center; position:relative; }
+
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  padding:0.35rem;
+  border-radius:10px;
+}
+
+.nav-toggle:focus{
+  outline:2px solid rgba(122,12,12,0.35);
+  outline-offset:2px;
+}
+
+.nav-links{ display:flex; align-items:center; }
+
+.nav-instagram{
+  margin-left:1rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  vertical-align:middle;
+}
+
+@media (max-width: 820px){
+  .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    right:0;
+    top:calc(100% + 10px);
+    min-width:220px;
+    background:rgba(255,255,255,0.98);
+    backdrop-filter: blur(10px);
+    padding:0.75rem 0.9rem;
+    border-radius:14px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0.6rem;
+    z-index:2000;
+  }
+
+  .nav-links.is-open{ display:flex; }
+
+  .nav-links a{ margin-left:0; padding:0.35rem 0.25rem; width:100%; }
+  .nav-instagram{ margin-left:0; padding-top:0.25rem; }
+}
+
+</style>
 </head>
 
 <body>
@@ -192,27 +247,27 @@
           </div>
         </a>
 
-<div>
-  <a href="index.html">Start</a>
-  <a href="sonderangebote.html">Angebote</a>
-  <a href="catering.html">Catering</a>
-  <a href="karriere.html">Karriere</a>
-  <a href="kontakt.html">Kontakt</a>
-
-  <!-- Instagram Icon (ohne extra CSS, nur Inline-Style) -->
-  <a href="https://www.instagram.com/metzgereikonrad.official/"
-     target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Instagram"
-     style="margin-left:1rem; display:inline-flex; align-items:center; justify-content:center; vertical-align:middle;">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 24 24"
-         width="22"
-         height="22"
-         fill="#222">
-      <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+<!-- RECHTS: Hamburger + Menü -->
+<div class="nav-right">
+  <button class="nav-toggle" aria-label="Menü öffnen" aria-controls="mainMenu" aria-expanded="false" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="#222" aria-hidden="true">
+      <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/>
     </svg>
-  </a>
+  </button>
+
+  <div id="mainMenu" class="nav-links">
+    <a href="index.html">Start</a>
+    <a href="sonderangebote.html">Angebote</a>
+    <a href="catering.html">Catering</a>
+    <a href="karriere.html">Karriere</a>
+    <a href="kontakt.html">Kontakt</a>
+
+    <a class="nav-instagram" href="https://www.instagram.com/metzgereikonrad.official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#222" aria-hidden="true">
+        <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+      </svg>
+    </a>
+  </div>
 </div>
       </nav>
     </div>
@@ -311,7 +366,62 @@
   <noscript>
     <style>
       .card{ opacity:1 !important; transform:none !important; }
-    </style>
+    
+
+/* --- Hamburger Navigation (Mobile) --- */
+.nav-right { display:flex; align-items:center; position:relative; }
+
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  padding:0.35rem;
+  border-radius:10px;
+}
+
+.nav-toggle:focus{
+  outline:2px solid rgba(122,12,12,0.35);
+  outline-offset:2px;
+}
+
+.nav-links{ display:flex; align-items:center; }
+
+.nav-instagram{
+  margin-left:1rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  vertical-align:middle;
+}
+
+@media (max-width: 820px){
+  .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    right:0;
+    top:calc(100% + 10px);
+    min-width:220px;
+    background:rgba(255,255,255,0.98);
+    backdrop-filter: blur(10px);
+    padding:0.75rem 0.9rem;
+    border-radius:14px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0.6rem;
+    z-index:2000;
+  }
+
+  .nav-links.is-open{ display:flex; }
+
+  .nav-links a{ margin-left:0; padding:0.35rem 0.25rem; width:100%; }
+  .nav-instagram{ margin-left:0; padding-top:0.25rem; }
+}
+
+</style>
   </noscript>
 
   <script>
@@ -352,7 +462,32 @@
 
       cards.forEach(card => io.observe(card));
     });
-  </script>
+  
+
+ // --- Hamburger Toggle ---
+ const btn = document.querySelector('.nav-toggle');
+ const menu = document.getElementById('mainMenu');
+ if(btn && menu){
+   btn.addEventListener('click', () => {
+     const open = menu.classList.toggle('is-open');
+     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+   });
+   document.addEventListener('click', (e) => {
+     if(!menu.classList.contains('is-open')) return;
+     const clickedInside = menu.contains(e.target) || btn.contains(e.target);
+     if(!clickedInside){
+       menu.classList.remove('is-open');
+       btn.setAttribute('aria-expanded', 'false');
+     }
+   });
+   window.addEventListener('resize', () => {
+     if(window.innerWidth > 820){
+       menu.classList.remove('is-open');
+       btn.setAttribute('aria-expanded', 'false');
+     }
+   });
+ }
+</script>
 
 </body>
 </html>
