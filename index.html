@@ -137,7 +137,10 @@
   
 
 /* --- Hamburger Navigation (Mobile) --- */
-.nav-right { display:flex; align-items:center; position:relative; }
+.nav-right { display:flex; align-items:center; justify-content:flex-end; gap:0.35rem; position:relative; }
+.nav-right a{margin-left:0;}
+.nav-instagram-top{display:none; margin-left:0; padding:0.35rem; border-radius:10px; align-items:center; justify-content:center;}
+
 
 .nav-toggle{
   display:none;              /* Desktop: versteckt */
@@ -169,7 +172,8 @@
 @media (max-width: 820px){
   .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
 
-  .nav-links{
+   .nav-instagram-top{display:inline-flex;}
+.nav-links{
     display:none;
     position:absolute;
     right:0;
