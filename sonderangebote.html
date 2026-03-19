@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metzgerei Konrad – Sonderangebote</title>
+  <meta name="description" content="Metzgerei Konrad – Aktuelle Sonderangebote und Highlights." />
 
-  <title>Metzgerei Konrad – Impressum</title>
-  <meta name="description" content="Impressum der Metzgerei Konrad Inh. Oliver Junghardt, Rimparer Str. 4, 97261 Güntersleben." />
-
-  <!-- Schriftart wie home.html / Kontakt.html -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- Font wie home.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -20,7 +19,7 @@
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
     body{background:var(--bg);color:#222;overflow-x:hidden}
 
-    /* Header / Navigation wie home.html & Kontakt.html */
+    /* Header / Nav wie home.html */
     header{
       position:fixed;
       width:100%;
@@ -39,25 +38,28 @@
       gap:10px;
       text-decoration:none;
       color:#222;
-      min-width:260px;
     }
     .brand img{height:50px}
     .brand strong{display:block}
     .brand span{font-size:0.8rem;color:#666}
 
-    /* Hero klein wie Kontakt.html */
+    /* Hero (kleiner als Startseite, aber gleicher Stil) */
     .hero-small{
-      min-height:45vh;
+      min-height:60vh;
       padding-top:90px; /* Platz für fixed header */
-      background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-        url('assets/images/Impressum.jpg') center/cover no-repeat;
+      background:url('assets/images/sonderangebot.jpg') center/cover no-repeat;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
       color:#fff;
       position:relative;
+    }
+    .hero-small::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.55);
     }
     .hero-content{
       position:relative;
@@ -67,19 +69,30 @@
       max-width:900px;
     }
     .hero-content h1{font-size:3rem;margin-bottom:0.75rem}
-    .hero-content p{opacity:0.95;line-height:1.6}
+    .hero-content p{opacity:0.95}
 
-    /* Content Bereich / Card-Stil wie Kontakt.html */
+    .btn{
+      display:inline-block;
+      margin-top:1.25rem;
+      padding:0.8rem 1.5rem;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      border-radius:30px;
+      transition:0.3s;
+    }
+    .btn:hover{transform:scale(1.05)}
+
+    /* Sections / Cards wie home.html */
     .section{padding:5rem 1rem;text-align:center}
     .section h2{font-size:2rem;margin-bottom:1rem}
-    .lead{max-width:980px;margin:0 auto;color:#444;line-height:1.7}
+    .lead{max-width:850px;margin:0 auto;color:#444;line-height:1.6}
 
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:2rem;
       margin-top:3rem;
-      align-items:stretch;
     }
     .card{
       background:#fff;
@@ -89,26 +102,24 @@
       transition:0.4s;
       transform:translateY(40px);
       opacity:0;
-      text-align:left;
-      border:1px solid rgba(0,0,0,0.05);
     }
+    .card img{width:100%;height:220px;object-fit:cover}
+    .card-content{padding:1.5rem;text-align:left}
+    .card-content h3{margin-bottom:0.5rem}
     .card:hover{transform:translateY(-10px) scale(1.02)}
     .visible{transform:translateY(0);opacity:1}
-    .card-content{padding:1.8rem}
-    .card-content h3{margin-bottom:0.8rem}
-    .card-content p{color:#444;line-height:1.8}
-    .card-content a{color:var(--primary);text-decoration:none}
-    .card-content a:hover{text-decoration:underline}
 
-    .block-title{
-      font-weight:700;
-      margin-top:1.2rem;
-      margin-bottom:0.4rem;
-      color:#222;
+    /* Angebotsbild groß */
+    .offer-image{
+      width:100%;
+      max-width:980px;
+      border-radius:16px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.10);
+      margin:2.5rem auto 0;
+      display:block;
     }
-    .muted{color:#555;font-size:0.98rem}
 
-    /* Footer wie home.html / Kontakt.html */
+    /* Footer wie home.html */
     footer{
       background:var(--dark);
       color:#fff;
@@ -118,7 +129,7 @@
     footer a{color:#fff;text-decoration:none}
     footer a:hover{text-decoration:underline}
 
-    /* Cookie Banner wie home.html / Kontakt.html */
+    /* Cookie Banner wie home.html */
     .cookie{
       position:fixed;
       bottom:0;
@@ -142,12 +153,13 @@
       white-space:nowrap;
     }
 
+    /* Animation */
     @keyframes fadeUp{
       from{opacity:0;transform:translateY(40px)}
       to{opacity:1;transform:translateY(0)}
     }
 
-    /* Responsive */
+    /* Kleine Responsive-Optimierungen */
     @media (max-width: 720px){
       .hero-content h1{font-size:2.2rem}
       nav{flex-wrap:wrap}
@@ -155,8 +167,6 @@
       .container{padding:0.9rem}
       .cookie{flex-direction:column;align-items:flex-start}
       .cookie button{width:100%}
-      .brand{min-width:auto}
-      .card-content{padding:1.4rem}
     }
   </style>
 </head>
@@ -173,7 +183,7 @@
             <span>Inh. Oliver Junghardt</span>
           </div>
         </a>
-		
+
 <div>
   <a href="index.html">Start</a>
   <a href="sonderangebote.html">Angebote</a>
@@ -203,75 +213,57 @@
   <!-- Hero -->
   <section class="hero-small">
     <div class="hero-content">
-      <h1>Impressum</h1>
-      <p>Rechtliche Angaben & Kontaktinformationen der Metzgerei Konrad.</p>
+      <h1>Sonderangebote</h1>
+      <p>Aktuelle Angebote, Highlights & Aktionen – frisch für Sie zusammengestellt.</p>
     </div>
   </section>
 
-  <!-- Inhalt -->
-  <section class="section" id="impressum">
-    <h2>Angaben gemäß § 5 TMG</h2>
+  <!-- Hauptinhalt -->
+  <section class="section" id="wochenblatt">
+    <h2>Aktuelles Wochenblatt</h2>
     <p class="lead">
-      Hier finden Sie die gesetzlichen Pflichtangaben sowie wichtige Hinweise zu Inhalten und Links.
+      Hier finden Sie unsere aktuellen Angebote. Änderungen vorbehalten – solange der Vorrat reicht.
+    </p>
+
+    <!-- übernommen aus page1.html -->
+    <img
+      class="offer-image"
+      src="assets/images/wochenangebote-2576x1821.jpg"
+      alt="Wochenangebote – Wochenblatt"
+      loading="lazy"
+    >
+  </section>
+
+  <section class="section" id="highlights">
+    <h2>Highlights & Aktionen</h2>
+    <p class="lead">
+      Entdecken Sie ausgewählte Aktionsprodukte. Fragen Sie uns gerne nach weiteren Empfehlungen!
     </p>
 
     <div class="cards">
+      <!-- übernommenes Bild aus page1.html -->
       <div class="card">
+        <img src="assets/images/Osteraktion.jpg" alt="Aktion Ostern" loading="lazy">
         <div class="card-content">
-          <h3>Metzgerei Konrad</h3>
+          <h3>Aktion: Ostern</h3>
+          <p>Ein passendes Highlight zu unseren Spezialitäten – ideal zum Verschenken.</p>
+        </div>
+      </div>
 
-          <p>
-            <strong>Metzgerei Konrad Inh. Oliver Junghardt</strong><br>
-            Rimparer Str. 4<br>
-            97261 Güntersleben
-          </p>
-
-          <p class="block-title">Gerichtsstand</p>
-          <p>Würzburg</p>
-
-          <p class="block-title">Geschäftsführer</p>
-          <p>Oliver Junghardt</p>
-
-          <p class="block-title">Kontakt</p>
-          <p>
-            Tel.: <a href="tel:+4993652069251">09365 / 2069251</a><br>
-            Email: <a href="mailto:info@metzgerei-konrad-gue.de">info@metzgerei-konrad-gue.de</a>
-          </p>
+      <!-- Platzhalter-Karten (optional) -->
+      <div class="card">
+        <img src="assets/images/heitheke-1288x966.jpg" alt="Partyservice & Catering" loading="lazy">
+        <div class="card-content">
+          <h3>Heiße Theke</h3>
+          <p>Wir bieten auch jeden Samstag eine heiße Theke an – kommen Sie gerne vorbei.</p>
         </div>
       </div>
 
       <div class="card">
+        <img src="assets/images/Allergene.png" alt="Team Metzgerei Konrad" loading="lazy">
         <div class="card-content">
-          <h3>Weitere Angaben</h3>
-
-          <p class="block-title">Zuständige Kammer</p>
-          <p>
-            Handwerkskammer für Unterfranken<br>
-            Rennweger Ring 3<br>
-            97070 Würzburg<br>
-            Betriebsnummer 2030396
-          </p>
-
-          <p class="block-title">Berufsrechtliche Regelungen</p>
-          <p>Gesetz zur Ordnung des Handwerks</p>
-
-          <p class="block-title">Umsatzsteuer-Identifikationsnummer</p>
-          <p>102/233/71332</p>
-
-          <p class="block-title">Verantwortlich für die Inhalte</p>
-          <p>Oliver Junghardt</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-content">
-          <h3>Haftungshinweis</h3>
-          <p>
-            Trotz inständiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
-            Die gesamte Webseite ist urheberrechtlich geschützt, soweit sich aus dem Urheberrechtsgesetz nichts anderes ergibt.
-            Jede Verwertung ist ohne die schriftliche Zustimmung unzulässig. Dies gilt insbesondere für Vervielfältigungen,
-            Übersetzungen, Mikroverfilmungen und die Einspeicherung und Verarbeitung der Daten in elektronische Systeme.
-          </p>
+          <h3>Fragen zu Allergenen?</h3>
+          <p>Sprechen Sie uns an – wir helfen bei Zutaten, Herkunft und Empfehlungen weiter.</p>
         </div>
       </div>
     </div>
@@ -290,11 +282,10 @@
   <!-- Cookie Banner -->
   <div class="cookie" id="cookieBanner">
     <span>Diese Website verwendet nur technisch notwendige Cookies.</span>
-    <button type="button" onclick="acceptCookies()">OK</button>
+    <button onclick="acceptCookies()">OK</button>
   </div>
 
   <script>
-    // Cookie Banner (wie home.html / Kontakt.html)
     function acceptCookies(){
       localStorage.setItem('cookiesAccepted','true');
       document.getElementById('cookieBanner').style.display='none';
@@ -303,7 +294,7 @@
       document.getElementById('cookieBanner').style.display='none';
     }
 
-    // Scroll Reveal: Cards sichtbar machen
+    // Scroll Animation (wie home.html: Cards werden sichtbar beim Scrollen)
     const cards = document.querySelectorAll('.card');
     const reveal = () => {
       const trigger = window.innerHeight * 0.88;
@@ -314,7 +305,7 @@
     };
     window.addEventListener('scroll', reveal);
     window.addEventListener('load', reveal);
-    reveal();
   </script>
 </body>
 </html>
+``
